@@ -1,0 +1,9 @@
+function abbrevName(name){
+
+    var newName = name.split(' ');
+    var first = newName[0].charAt(0);
+    var last = newName[1].charAt(0);
+    var x = first + '.' + last;
+    
+    return x.toUpperCase();
+}
