@@ -1,0 +1,19 @@
+function divisors(integer) {
+  var count = [];
+  for(var i = 2; i < integer; i++){
+    if (integer % i === 0) {
+      count.push(i);
+    }
+  }
+  
+  if (count.length === 0){
+    return integer + ' is prime';
+  }
+  else{
+    return count;
+  }  
+};
+
+Test.assertDeepEquals(divisors(15), [3, 5]);
+Test.assertDeepEquals(divisors(12), [2, 3, 4, 6]);
+Test.assertDeepEquals(divisors(13), "13 is prime");
