@@ -1,0 +1,12 @@
+function spinWords(str){
+  var count = 0;
+  var empty = str.split(" ");
+  console.log(empty);
+  for (var i = 0; i < empty.length; i++){
+    if (empty[i].length >= 5) {
+      empty[i] = empty[i].split("").reverse().join("");
+    }
+  }
+  var newEmpty = empty.slice(0).join(' ');
+  return newEmpty;
+}
