@@ -1,0 +1,6 @@
+function findShort(s){
+
+  var nstr = s.split(" ");
+  var min = Math.min.apply(Math, nstr.map(function(nstr) { return nstr.length; }));
+  return min;
+}
