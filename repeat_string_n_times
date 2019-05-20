@@ -1,0 +1,9 @@
+function repeater(string, n){
+  var count = 0;
+  var nstr = "";
+  while (count < n) {
+    count++;
+    nstr += string;
+  }
+  return nstr;
+}
