@@ -1,0 +1,15 @@
+function points(games) {
+   var count = 0;
+   for (var i = 0; i < games.length; i++){
+    var nGame = games[i].split(":");
+    if (nGame[0] > nGame[1]){
+      count += 3;
+    }
+    else if (nGame[0] === nGame[1]){
+      count += 1;
+    }
+  }
+  console.log(count);
+  
+  return count;
+}
