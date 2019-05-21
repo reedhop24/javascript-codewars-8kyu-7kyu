@@ -1,0 +1,15 @@
+function solution(str, ending){
+  var end = ending.length;
+  var str1 = str.length;
+  var start = str1 - end;
+  for (var i = start; i < str.length; i++){
+    for (var j = 0; j < ending.length; j++){
+      if (str[i] !== ending[j]){
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+  }
+}
