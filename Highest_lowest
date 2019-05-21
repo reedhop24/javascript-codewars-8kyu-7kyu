@@ -1,0 +1,18 @@
+function highAndLow(numbers){
+  var arr = numbers.split(" ").map(Number);
+  var arr2 = numbers.split(" ").map(Number);
+  console.log(arr);
+  var largest = arr[0];
+  var smallest = arr2[0];
+  for(var i = 1; i < arr.length; i++){
+    if (arr[i] > largest) {
+    largest = arr[i];
+    }
+  }
+  for(var i = 1; i < arr2.length; i++){
+    if (arr2[i] < smallest) {
+    smallest = arr2[i];
+    }
+  }
+  return largest + " " + smallest;
+}
