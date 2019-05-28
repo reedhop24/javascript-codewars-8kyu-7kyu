@@ -1,0 +1,10 @@
+function nthSmallest(arr, pos){
+  arr.sort(function(a, b){return a-b});
+  var count = 0;
+  for(var i = 0; i < pos; i++){
+   count++;
+   if (count === pos) {
+     return arr[i];
+   }
+  }
+}
