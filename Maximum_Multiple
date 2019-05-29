@@ -1,0 +1,9 @@
+function maxMultiple(divisor, bound){
+  var count = bound;
+  while(bound >= count) {
+    if (count % divisor === 0) {
+      return count;
+    }
+      count--;
+  }
+}
