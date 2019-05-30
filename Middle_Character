@@ -1,0 +1,17 @@
+function getMiddle(s)
+{
+  var even = "";
+  var odd = "";
+  if (s.length % 2 === 0) {
+    for(var i = s.length/2 - 1; i < s.length/2 + 1; i++) {
+      even += s[i];
+    }
+    return even;
+  }
+   else {
+   var ceil = Math.ceil(s.length/2);
+   for (var i = ceil-1; i < ceil; i++) {
+     return s[i];
+   }
+   }
+}
