@@ -1,0 +1,9 @@
+function flyBy(lamps, drone){
+  
+  for(var i = 0; i < lamps.length; i++) {
+    if(i < drone.length) {
+      lamps = lamps.replace(lamps[i], "o");
+    }
+  }
+  return lamps;
+}
