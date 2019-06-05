@@ -1,0 +1,9 @@
+var number = function(busStops){
+  var out = 0;
+  var inn = 0;
+  for (var i = 0; i < busStops.length; i++) {
+    inn += busStops[i][0];
+    out += busStops[i][1];
+  }
+  return inn - out;
+}
