@@ -1,0 +1,11 @@
+function timedReading(maxLength, text) {
+  var ntext = text.trim().replace(/\W+/g, " ");
+  var nText = ntext.split(" ");
+  var count = 0;
+  for(var i = 0; i < nText.length; i++) {
+    if (nText[i].length <= maxLength && nText[i].length !== 0) {
+      count++;
+    }
+  }
+  return count;
+}
