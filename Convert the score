@@ -1,0 +1,51 @@
+// You are working at a lower league football stadium and you've been tasked with automating the scoreboard.
+
+// The referee will shout out the score, you have already set up the voice recognition module which turns the ref's voice into a string, but the spoken score needs to be converted into a pair for the scoreboard!
+
+// e.g. "The score is four nil" should return [4,0]
+
+// Either teams score has a range of 0-9, and the ref won't say the same string every time e.g.
+
+// "new score: two three"
+
+// "two two"
+
+// "Arsenal just conceded another goal, two nil"
+
+function scoreboard(string) {
+  var x = string.split(" ");
+  var empty = [];
+  for(var i = 0; i < x.length; i++) {
+    if(x[i] === "nil") {
+      empty.push(0);
+    }
+    else if(x[i] === "one"){
+      empty.push(1);
+    }
+    else if(x[i] === "two"){
+      empty.push(2);
+    }
+    else if(x[i] === "three"){
+      empty.push(3);
+    }
+    else if(x[i] === "four"){
+      empty.push(4);
+    }
+    else if(x[i] === "five"){
+      empty.push(5);
+    }
+    else if(x[i] === "six"){
+      empty.push(6);
+    }
+    else if(x[i] === "seven"){
+      empty.push(7);
+    }
+    else if(x[i] === "eight"){
+      empty.push(8);
+    }
+    else if(x[i] === "nine"){
+      empty.push(9);
+    }
+  }
+  return empty;
+}
