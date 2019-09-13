@@ -1,0 +1,16 @@
+// Given an array/list [] of integers , Construct a product array Of same size Such That prod[i] is equal to The Product of all the 
+// elements of Arr[] except Arr[i].
+
+function productArray(numbers){
+  var empty = [];
+  for(var i = 0; i < numbers.length; i++) {
+    var multiply = 1;
+    for(var j = 0; j < numbers.length; j++){
+      if(i !== j) {
+        multiply *= numbers[j]; 
+      }
+    }
+    empty.push(multiply);
+  }
+  return empty;
+}
