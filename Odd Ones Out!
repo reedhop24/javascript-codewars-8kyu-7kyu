@@ -1,0 +1,18 @@
+// Challenge: You are given a list of numbers. The numbers each repeat a certain number of times. 
+// Remove all numbers that repeat an odd number of times while keeping everything else the same.
+
+function oddOnesOut(nums) {
+  var empty = [];
+  for(var i = 0; i < nums.length; i++) {
+    var count = 0;
+    for(var j = 0; j < nums.length; j++) {
+      if(nums[i] == nums[j]) {
+        count++;
+      }
+    }
+    if (count % 2 == 0) {
+      empty.push(nums[i]);
+    }
+  }
+  return empty;
+}
