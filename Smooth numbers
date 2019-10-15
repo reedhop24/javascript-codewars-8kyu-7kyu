@@ -1,0 +1,46 @@
+// The concept of "smooth number" is applied to all those numbers whose prime factors are lesser than or equal to 7: 60 is a smooth 
+// number (2 * 2 * 3 * 5), 111 is not (3 * 37).
+
+// More specifically, smooth numbers are classified by their highest prime factor and your are tasked with writing a isSmooth/is_smooth 
+// function that returns a string with this classification as it follows:
+
+// 2-smooth numbers should be all defined as a "power of 2", as they are merely that;
+// 3-smooth numbers are to return a result of "3-smooth";
+// 5-smooth numbers will be labelled as "Hamming number"s (incidentally, you might appreciate this nice kata on them);
+// 7-smooth numbers are classified as "humble numbers"s;
+// for all the other numbers, just return non-smooth.
+
+function isSmooth(n){
+const isPrime = x => {
+      for(let i = 2, s = Math.sqrt(x); i <= s; i++)
+          if(x % i === 0) return false; 
+      return x > 1;
+    }
+  var empty = [];
+  var values = {2:"power of 2", 3:"3-smooth", 5:"Hamming number", 7:"humble number"}
+  if(n < 8 && isPrime(n) === true) {
+    empty.push(n);
+  }
+  while(isPrime(n) === false) {
+    if(n % 7 === 0) {
+      n = n/7;
+      empty.push(7);
+    }
+    else if(n % 5 === 0) {
+      n = n/5;
+      empty.push(5);
+    }
+    else if(n % 3 === 0) {
+      n = n/3;
+      empty.push(3);
+    }
+    else if(n % 2 === 0) {
+      n = n/2;
+      empty.push(2);
+    } 
+  }
+  if (n > 7) {
+    return 'non-smooth';
+  }
+  return values[empty[0]];
+  }
