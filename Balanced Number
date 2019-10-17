@@ -1,0 +1,40 @@
+// If the number has an odd number of digits then there is only one middle digit, e.g. 92645 has middle digit 6; otherwise, there are 
+// two middle digits , e.g. 1301 has middle digits 3 and 0
+
+// The middle digit(s) should not be considered when determining whether a number is balanced or not, e.g 413023 is a balanced number 
+// because the left sum and right sum are both 5.
+
+// Number passed is always Positive .
+
+// Return the result as String
+// Balanced number is the number that * The sum of all digits to the left of the middle digit(s) and the sum of all digits to the right 
+// of the middle digit(s) are equal*.
+
+function balancedNum(number)
+{
+  var left = 0;
+  var right = 0;
+  var arr = (''+number).split('');
+  var middle = (Math.floor(arr.length/2));
+  let j = arr.length-1;
+  for(let i = 0; i < middle; i++) {
+    if(arr.length % 2 === 0) {
+      if(i !== middle - 1) {
+        left += parseInt(arr[i]);
+      }
+      if(j !== middle) {
+        right += parseInt(arr[j]);
+      }
+    }
+    else if(arr.length % 2 !== 0){
+      if(i !== middle) {
+        left += parseInt(arr[i]);
+      }
+      if(j !== middle) {
+        right += parseInt(arr[j]);
+      }
+    }
+    j--;
+  }
+ return left === right ? 'Balanced' : 'Not Balanced'
+}
