@@ -1,0 +1,22 @@
+// Input:
+
+// a string strng
+// an array of strings arr
+// Output of function contain_all_rots(strng, arr) (or containAllRots or contain-all-rots):
+
+// a boolean true if all rotations of strng are included in arr (C returns 1)
+// false otherwise (C returns 0)
+// Examples:
+// contain_all_rots(
+//  "bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]) -> true
+
+function containAllRots(strng, arr) {
+  for(var i = 0; i < strng.length; i++) {
+    strng += strng[0];
+    strng = strng.slice(1);
+    if(arr.includes(strng) === false) {
+      return false;
+    }
+  }
+  return true;
+}
