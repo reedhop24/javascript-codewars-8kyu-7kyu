@@ -1,0 +1,46 @@
+// Compare two strings by comparing the sum of their values (ASCII character code).
+
+// For comparing treat all letters as UpperCase
+// null/NULL/Nil/None should be treated as empty strings
+// If the string contains other characters than letters, treat the whole string as it would be empty
+// Your method should return true, if the strings are equal and false if they are not equal.
+
+// Examples:
+// "AD", "BC"  -> equal
+// "AD", "DD"  -> not equal
+// "gf", "FG"  -> equal
+// "zz1", ""   -> equal (both are considered empty)
+// "ZzZz", "ffPFF" -> equal
+// "kl", "lz"  -> not equal
+// null, ""    -> equal
+
+function compare(s1, s2) {
+    // Set the comparison variables
+    let compare1 = 0;
+    let compare2 = 0;
+    let isChar = 0;
+    let isChar2 = 0;
+    
+    if(s1){
+    // Split and test whether the character is a letter, if so add ASCII value to the comparison variables
+    s1.toUpperCase().split('').forEach((x) => {
+      if(x.match(/^[A-Za-z]+$/)) compare1 += (x.charCodeAt(0));
+      // Else add to the is character comparison variable
+      else isChar++;
+    });
+    // Lastly if the variable is null or '' add to the is character comparison variable
+    } else isChar++;
+    
+    
+    if(s2) {
+    // Split and test whether the character is a letter, if so add ASCII value to the comparison variables
+    s2.toUpperCase().split('').forEach((x) => {
+      if(x.match(/^[A-Za-z]+$/)) compare2 += (x.charCodeAt(0));
+      // Else add to the is character comparison variable
+      else isChar2++;
+    });
+    // Lastly if the variable is null or '' add to the is character comparison variable
+    } else isChar2++;
+    if(nan2 > 0 && nan > 0) return true;
+    return (compare1 === compare2) ? true : false;
+}
